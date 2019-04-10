@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.bim4ren.eu/buildingsystems#"
+     xml:base="http://www.bim4ren.eu/buildingsystems"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.bim4ren.eu/buildingsystems"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#AirAirHeatPump -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#AirAirHeatPump">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HeatPump"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#AirChiller -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#AirChiller">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Cooling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#AirConditioner -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#AirConditioner">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Cooling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#AirWaterHeatPump -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#AirWaterHeatPump">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HeatPump"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Boiler -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Boiler">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Computer -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Computer">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Cooling -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Cooling">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HVAC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DishWasher -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DishWasher">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DomesticAppliances -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DomesticHotWater -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DoubleFluxVentilation -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DoubleFluxVentilation">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Ventilation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricRadiator -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricRadiator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Radiator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Fridge -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Fridge">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GeothermalHeatPump -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GeothermalHeatPump">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HeatPump"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#HVAC -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HVAC"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#HeatPump -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HeatPump">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Heating -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Heating">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HVAC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#HotWaterRadiator -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HotWaterRadiator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Radiator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Lighting -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Photovoltaic -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Photovoltaic">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Radiator -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Radiator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#SimpleFlowVentilation -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#SimpleFlowVentilation">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Ventilation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#SolarPanel -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#SolarThermal -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#SolarThermal">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Ventilation -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Ventilation">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HVAC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#WashingMachine -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#WashingMachine">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
