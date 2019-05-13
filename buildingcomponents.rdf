@@ -47,6 +47,12 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#separatedSpaces -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#separatedSpaces"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -126,6 +132,27 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#HorizontalInterspaceElement -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#HorizontalInterspaceElement">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#InterspaceElement -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InterspaceElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#separatedSpaces"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#Opening -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Opening">
@@ -159,7 +186,7 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Slab">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#VerticalInterspaceElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
     </owl:Class>
     
 
@@ -183,11 +210,19 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#Wall -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Wall">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#HorizontalInterspaceElement"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#HorizontalInterspaceElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#hasOpening"/>
@@ -209,6 +244,22 @@
                 <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#GlazingType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#Elevator -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Elevator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#Stairs -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Stairs">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
     </owl:Class>
     
 

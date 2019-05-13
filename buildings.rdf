@@ -267,14 +267,6 @@
     
 
 
-    <!-- http://www.bim4ren.eu/buildings#Elevator -->
-
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Elevator">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#VerticalInterspaceElement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.bim4ren.eu/buildings#Entity -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Entity">
@@ -332,31 +324,10 @@
     
 
 
-    <!-- http://www.bim4ren.eu/buildings#HorizontalInterspaceElement -->
-
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#HorizontalInterspaceElement">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#InterspaceElement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.bim4ren.eu/buildings#InnerFloor -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#InnerFloor">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#Floor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.bim4ren.eu/buildings#InterspaceElement -->
-
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#InterspaceElement">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#separatedSpaces"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -532,14 +503,6 @@
     
 
 
-    <!-- http://www.bim4ren.eu/buildings#Stairs -->
-
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Stairs">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#VerticalInterspaceElement"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.bim4ren.eu/buildings#Terraced -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Terraced">
@@ -552,14 +515,6 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Toilets">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.bim4ren.eu/buildings#VerticalInterspaceElement -->
-
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#VerticalInterspaceElement">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#InterspaceElement"/>
     </owl:Class>
     
 
