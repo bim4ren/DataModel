@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.bim4ren.eu/buildingcomponents#"
      xml:base="http://www.bim4ren.eu/buildingcomponents"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
@@ -23,6 +23,20 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#containedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#containedIn">
+        <owl:inverseOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#contains"/>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#hasGlazing -->
 
     <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#hasGlazing"/>
@@ -38,6 +52,12 @@
     <!-- http://www.bim4ren.eu/buildingcomponents#hasOpeningElement -->
 
     <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#hasOpeningElement"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#isOriented -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#isOriented"/>
     
 
 
@@ -69,6 +89,34 @@
     <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#airTightness">
         <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#thermal"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#angleHorizontal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#angleHorizontal">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#positionOrientation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#angleVertical -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#angleVertical">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#positionOrientation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#isInternal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#isInternal"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#positionOrientation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#positionOrientation"/>
     
 
 
@@ -115,13 +163,6 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Façade">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Wall"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#orientation"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#Orientation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -140,9 +181,63 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#InsulationLayer -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InsulationLayer">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Roof"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Wall"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#isInternal"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#InternalCeiling -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InternalCeiling">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#InternalFloor -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InternalFloor">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#InterspaceElement -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InterspaceElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Opening"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#separatedSpaces"/>
@@ -159,11 +254,18 @@
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#hasOpeningElement"/>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#OpeningElement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">should be renamed as framing</rdfs:comment>
     </owl:Class>
     
 
@@ -172,6 +274,13 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#OpeningElement">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Opening"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Should be renamed as opening</rdfs:comment>
     </owl:Class>
     
 
@@ -179,6 +288,41 @@
     <!-- http://www.bim4ren.eu/buildingcomponents#Orientation -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Orientation"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Positioning -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Positioning">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#orientation"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Orientation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#angleHorizontal"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#angleVertical"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Roof -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Roof">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+    </owl:Class>
     
 
 
@@ -248,6 +392,12 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#WindowCoverringType -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#WindowCoverringType"/>
+    
+
+
     <!-- http://www.bim4ren.eu/buildings#Elevator -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Elevator">
@@ -292,5 +442,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

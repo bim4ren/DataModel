@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://wwwbim4ren.eu/occupancymodel#"
+     xml:base="http://wwwbim4ren.eu/occupancymodel"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://wwwbim4ren.eu/occupancymodel">
+        <owl:imports rdf:resource="http://www.bim4ren.eu/buildings"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#age -->
+
+    <owl:ObjectProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#age"/>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#occupiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#occupiedBy"/>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#presence -->
+
+    <owl:ObjectProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#presence"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#endTime -->
+
+    <owl:DatatypeProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#endTime">
+        <rdfs:subPropertyOf rdf:resource="http://wwwbim4ren.eu/occupancymodel#timeRange"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#startTime -->
+
+    <owl:DatatypeProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#startTime">
+        <rdfs:subPropertyOf rdf:resource="http://wwwbim4ren.eu/occupancymodel#timeRange"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#timeRange -->
+
+    <owl:DatatypeProperty rdf:about="http://wwwbim4ren.eu/occupancymodel#timeRange"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#VolumetricElement -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildings#VolumetricElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwwbim4ren.eu/occupancymodel#occupiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://wwwbim4ren.eu/occupancymodel#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#AgeCategory -->
+
+    <owl:Class rdf:about="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#OccupancyTimeRange -->
+
+    <owl:Class rdf:about="http://wwwbim4ren.eu/occupancymodel#OccupancyTimeRange">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwwbim4ren.eu/occupancymodel#endTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwwbim4ren.eu/occupancymodel#startTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Person -->
+
+    <owl:Class rdf:about="http://wwwbim4ren.eu/occupancymodel#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwwbim4ren.eu/occupancymodel#presence"/>
+                <owl:someValuesFrom rdf:resource="http://wwwbim4ren.eu/occupancymodel#OccupancyTimeRange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwwbim4ren.eu/occupancymodel#age"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Adult -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#Adult">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Baby -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#Baby">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Child -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#Child">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Senior -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#Senior">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#Teenager -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#Teenager">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wwwbim4ren.eu/occupancymodel#YoungAdult -->
+
+    <owl:NamedIndividual rdf:about="http://wwwbim4ren.eu/occupancymodel#YoungAdult">
+        <rdf:type rdf:resource="http://wwwbim4ren.eu/occupancymodel#AgeCategory"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,697 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.bim4ren.eu/energymodel#"
+     xml:base="http://www.bim4ren.eu/energymodel"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.bim4ren.eu/energymodel">
+        <owl:imports rdf:resource="http://www.bim4ren.eu/buildingcomponents"/>
+        <owl:imports rdf:resource="http://www.bim4ren.eu/buildings"/>
+        <owl:imports rdf:resource="http://www.bim4ren.eu/buildingsystems"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/energymodel#connectedTo"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#fluid -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/energymodel#fluid"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#hasOccured -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/energymodel#hasOccured"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/energymodel#locatedAt"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#airTightness -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#airTightness"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#date"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#dateOfInstallation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#dateOfInstallation"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#description"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#duration"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#floorArea -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#floorArea"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#frequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#frequency"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#grossFloorArea -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#grossFloorArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/energymodel#floorArea"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#infraredTransmittance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#infraredTransmittance">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/energymodel#transmittance"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#installationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#installationDate"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#maxFlow -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#maxFlow"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#netFloorArea -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#netFloorArea">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/energymodel#floorArea"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#powerEfficiency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#powerEfficiency"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#powerFactor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#powerFactor"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#powerIn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#powerIn"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#powerOut -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#powerOut"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#setPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#setPoint"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#setpoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#setpoint"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#thermalEfficiency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#thermalEfficiency">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#thermal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#thermalMass -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#thermalMass">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#thermal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#thermalResistance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#thermalResistance"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#transmittance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#transmittance"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#visibleTransmittance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#visibleTransmittance">
+        <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/energymodel#transmittance"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#windowRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/energymodel#windowRate"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Façade -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingcomponents#Façade">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#Envelope"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#InterspaceElement -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingcomponents#InterspaceElement">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#BuildingElement"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Roof -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingcomponents#Roof">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#Envelope"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#SurfaceElement -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingcomponents#SurfaceElement">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#BuildingElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#thermalResistance"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Window -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingcomponents#Window">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#uFactor"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#VolumetricElement -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildings#VolumetricElement">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#BuildingElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#grossFloorArea"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#netFloorArea"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#setPoint"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#CHP -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#CHP">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#powerEfficiency"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#thermalEfficiency"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Cooling -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#Cooling">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#setpoint"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DomesticAppliances -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticAppliances">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySystem"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#DomesticHotWater -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticHotWater">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySystem"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricConsumer -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricConsumer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#powerIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricProducer -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricProducer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#powerOut"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Elevator -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#Elevator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#HVAC -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#HVAC">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#connectedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/energymodel#BuildingElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#setPoint"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Lighting -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#Lighting">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#powerIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#SolarPanel -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#SolarPanel">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySystem"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Ventilation -->
+
+    <rdf:Description rdf:about="http://www.bim4ren.eu/buildingsystems#Ventilation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#maxFlow"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#BuildingElement -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#BuildingElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#hasOccured"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/energymodel#Maintenance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#dateOfInstallation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#BuildingFluid -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Consumption -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#Consumption">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#fluid"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#duration"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#frequency"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#EnergySource -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#EnergySource"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#EnergySystem -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#EnergySystem">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#BuildingElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#locatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#VolumetricElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#installationDate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#powerFactor"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Envelope -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#Envelope">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#isOriented"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#Positioning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#uFactor"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#infraredTransmittance"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#thermalMass"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#visibleTransmittance"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#airTightness"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#windowRate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Gas -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#Gas">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/energymodel#EnergySource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Maintenance -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/energymodel#Maintenance">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#date"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/energymodel#description"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Butane -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Butane">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#Gas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Electricity -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Electricity">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Electricty -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Electricty">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#EnergySource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Fuel -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Fuel">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#FuelOil -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#FuelOil">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#EnergySource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Gas -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Gas">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#NaturelGas -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#NaturelGas">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#Gas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Propane -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Propane">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#Gas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.bim4ren.eu/energymodel#Water -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/energymodel#Water">
+        <rdf:type rdf:resource="http://www.bim4ren.eu/energymodel#BuildingFluid"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,12 +1,47 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.bim4ren.eu/buildingsystems#"
      xml:base="http://www.bim4ren.eu/buildingsystems"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.bim4ren.eu/buildingsystems"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#area -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingsystems#area"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#azimuth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingsystems#azimuth"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#efficiency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingsystems#efficiency"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#inclination -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingsystems#inclination"/>
     
 
 
@@ -63,9 +98,35 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingsystems#CHP -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#CHP">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricProducer"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#CompactFluorescent -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#CompactFluorescent">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingsystems#Computer -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Computer">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#CookTop -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#CookTop">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
     </owl:Class>
     
@@ -74,6 +135,7 @@
     <!-- http://www.bim4ren.eu/buildingsystems#Cooling -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Cooling">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#HVAC"/>
     </owl:Class>
     
@@ -83,6 +145,7 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DishWasher">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
     </owl:Class>
     
 
@@ -95,7 +158,14 @@
 
     <!-- http://www.bim4ren.eu/buildingsystems#DomesticHotWater -->
 
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#DomesticHotWater">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingsystems#efficiency"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -107,10 +177,64 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricBoiler -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricBoiler">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Boiler"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricConsumer -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricCookTop -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricCookTop">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#CookTop"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricOven -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricOven">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Oven"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#ElectricProducer -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricProducer"/>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingsystems#ElectricRadiator -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#ElectricRadiator">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Radiator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Elevator -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Elevator"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Fluorescent -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Fluorescent">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
     </owl:Class>
     
 
@@ -119,6 +243,56 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Fridge">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#FuelCHP -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#FuelCHP">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#CHP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GasBoiler -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GasBoiler">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Boiler"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#GasConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GasCHP -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GasCHP">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#CHP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GasConsumer -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GasConsumer"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GasCookTop -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GasCookTop">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#CookTop"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#GasConsumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#GasOven -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#GasOven">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#GasConsumer"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Oven"/>
     </owl:Class>
     
 
@@ -137,9 +311,18 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingsystems#Hallogen -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Hallogen">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingsystems#HeatPump -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HeatPump">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
     </owl:Class>
     
@@ -153,10 +336,34 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingsystems#HighPressureMercury -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HighPressureMercury">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#HighPressureSodium -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HighPressureSodium">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingsystems#HotWaterRadiator -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#HotWaterRadiator">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Radiator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#LED -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#LED">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
     </owl:Class>
     
 
@@ -167,9 +374,42 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingsystems#Metalhalide -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Metalhalide">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Microwave -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Microwave">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Oled -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Oled">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Oven -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Oven">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingsystems#Photovoltaic -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#Photovoltaic">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricProducer"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
     </owl:Class>
     
@@ -193,7 +433,26 @@
 
     <!-- http://www.bim4ren.eu/buildingsystems#SolarPanel -->
 
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#SolarPanel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingsystems#area"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingsystems#azimuth"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingsystems#inclination"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -203,6 +462,14 @@
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticHotWater"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Heating"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#SolarPanel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#TungstenFilament -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#TungstenFilament">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#Lighting"/>
     </owl:Class>
     
 
@@ -219,10 +486,46 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingsystems#WashingMachine">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#DomesticAppliances"/>
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingsystems#ElectricConsumer"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Electricity -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingsystems#Electricity"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#FuelOil -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingsystems#FuelOil"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#NaturalGas -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingsystems#NaturalGas"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingsystems#Propane -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingsystems#Propane"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

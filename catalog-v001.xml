@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/alignment/Systems_align_Brick" uri="alignment/BRICK_align_Systems.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/alignment_bot" uri="alignment/LBD_align_Building.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/buildingcomponents" uri="buildingcomponents.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/buildingcomponents/LBD_Alignment" uri="alignment/LBD_align_BuildingComponents.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/buildings" uri="buildings.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/buildingsystems" uri="buildingsystems.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://www.bim4ren.eu/energymodel" uri="energy.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1567092585129" name="http://wwwbim4ren.eu/occupancymodel" uri="occupancy.owl"/>
+    </group>
+</catalog>
