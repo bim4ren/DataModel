@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.bim4ren.eu/buildingcomponents#"
      xml:base="http://www.bim4ren.eu/buildingcomponents"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -8,6 +9,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.bim4ren.eu/buildingcomponents">
         <owl:imports rdf:resource="http://www.bim4ren.eu/buildings"/>
+        <dc:creator xml:lang="en">Nathalie Charbel</dc:creator>
+        <dc:creator xml:lang="en">Pierre Bourreau</dc:creator>
+        <dc:description xml:lang="en">The building elements ontology contains concepts to describe elements of a building. Such elements are parts of a building zone, and are to be considered as a second-level detail modeliing of the building: while the buildings ontology can be used to describe volumetric zones in a building, the building components ontology allows one to describe into more details elements such as windows, doors...</dc:description>
+        <dc:title xml:lang="en">Building Components - BIM4Ren</dc:title>
     </owl:Ontology>
     
 
@@ -134,6 +139,12 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#volumicMass -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#volumicMass"/>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#width -->
 
     <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildingcomponents#width"/>
@@ -151,6 +162,30 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cellulose -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Cellulose">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cork -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Cork">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cotton -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Cotton">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#Door -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Door">
@@ -159,10 +194,63 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#Envelope -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Envelope"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#ExpandedClay -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#ExpandedClay">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#MineralWool"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#Façade -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Façade">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Envelope"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#FlaxWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#FlaxWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Framing -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Framing">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#OpeningElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">should be renamed as framing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#GlassWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#GlassWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#MineralWool"/>
     </owl:Class>
     
 
@@ -170,6 +258,14 @@
     <!-- http://www.bim4ren.eu/buildingcomponents#GlazingType -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#GlazingType"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#HempWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#HempWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
     
 
 
@@ -181,6 +277,20 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#Insulation -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Insulation">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Material"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#volumicMass"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#InsulationLayer -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#InsulationLayer">
@@ -188,13 +298,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Roof"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Wall"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Roof"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -235,7 +345,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Opening"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Framing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -248,24 +358,24 @@
     
 
 
-    <!-- http://www.bim4ren.eu/buildingcomponents#Opening -->
+    <!-- http://www.bim4ren.eu/buildingcomponents#Material -->
 
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Opening">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#InterspaceElement"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#contains"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildingcomponents#OpeningElement"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">should be renamed as framing</rdfs:comment>
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Material"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#MineralWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#MineralWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Insulation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#NaturalFiber -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#NaturalFiber">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Insulation"/>
     </owl:Class>
     
 
@@ -277,7 +387,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#containedIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Opening"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Framing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Should be renamed as opening</rdfs:comment>
@@ -288,6 +398,46 @@
     <!-- http://www.bim4ren.eu/buildingcomponents#Orientation -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Orientation"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Perlite -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Perlite">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#MineralWool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polyester -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Polyester">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Synthetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polyisocyanurate -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Polyisocyanurate">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Synthetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polystirene -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Polystirene">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Synthetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#PolyvinylChloride -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#PolyvinylChloride">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Synthetic"/>
+    </owl:Class>
     
 
 
@@ -318,9 +468,26 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#PressedWood -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#PressedWood">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#RockWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#RockWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#MineralWool"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#Roof -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Roof">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Envelope"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
     </owl:Class>
     
@@ -331,6 +498,22 @@
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Slab">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#SurfaceElement"/>
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Solomite -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Solomite">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Straw -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Straw">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
     </owl:Class>
     
 
@@ -354,6 +537,30 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#Synthetic -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Synthetic">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Insulation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#UreaFormaldehyde -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#UreaFormaldehyde">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#Synthetic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Vermiculite -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Vermiculite">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#MineralWool"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement -->
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement">
@@ -370,7 +577,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildingcomponents#hasOpening"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Opening"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildingcomponents#Framing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -398,19 +605,31 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildingcomponents#WoodWool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#WoodWool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Wool -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildingcomponents#Wool">
+        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#NaturalFiber"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.bim4ren.eu/buildings#Elevator -->
 
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Elevator">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Elevator"/>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#Stairs -->
 
-    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Stairs">
-        <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildingcomponents#VerticalInterspaceElement"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Stairs"/>
     
 
 
@@ -422,6 +641,126 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cellulose -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Cellulose"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cork -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Cork"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Cotton -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Cotton"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#ExpandedClay -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#ExpandedClay"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#FlaxWool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#FlaxWool"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#GlassWool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#GlassWool"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#HempWool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#HempWool"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Perlite -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Perlite"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polyester -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Polyester"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polyisocyanurate -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Polyisocyanurate"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Polystyrene -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Polystyrene"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#PolyvinylChloride -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#PolyvinylChloride"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#PressedWood -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#PressedWood"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#RockWool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#RockWool"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Solomite -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Solomite"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Straw -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Straw"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#UreaFormaldehyde -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#UreaFormaldehyde"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Vermiculite -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Vermiculite"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#WoodWool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#WoodWool"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildingcomponents#Wool -->
+
+    <owl:NamedIndividual rdf:about="http://www.bim4ren.eu/buildingcomponents#Wool"/>
     
 
 

@@ -1,12 +1,20 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.bim4ren.eu/buildingsystems#"
      xml:base="http://www.bim4ren.eu/buildingsystems"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.bim4ren.eu/buildingsystems"/>
+    <owl:Ontology rdf:about="http://www.bim4ren.eu/buildingsystems">
+        <owl:imports rdf:resource="http://www.bim4ren.eu/buildings"/>
+        <dc:creator xml:lang="en">Nathalie Charbel</dc:creator>
+        <dc:creator xml:lang="en">Pierre Bourreau</dc:creator>
+        <dc:description xml:lang="en">An ontology to describe the systems in a building. A particular focus is made on energy-related systems, and in particular for residential buildings. Systems are categorized in 3 different categories: - domestic appliances; - HVAC systems (heating, ventilation, air conditionning); - Domestic Hot Water.
+We also use other categories for the type of energy used (electricy, gas, fuel...) and whether the system produces or consumes energy.</dc:description>
+        <dc:title xml:lang="en">Building Systems - BIM4Ren Project</dc:title>
+    </owl:Ontology>
     
 
 

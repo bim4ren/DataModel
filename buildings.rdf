@@ -1,12 +1,48 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.bim4ren.eu/buildings#"
      xml:base="http://www.bim4ren.eu/buildings"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.bim4ren.eu/buildings"/>
+    <owl:Ontology rdf:about="http://www.bim4ren.eu/buildings">
+        <dc:creator xml:lang="en">Nathalie Charbel</dc:creator>
+        <dc:creator xml:lang="en">Pierre Bourreau</dc:creator>
+        <dc:description xml:lang="en">The BIM4Ren building ontology is the core of the BIM4Ren data model. It contains all concepts used to describe what is called the &apos;building topology&apos; in the BOT ontology, the ontology used as the draft (see alignments).
+Additionnally to BOT, many concepts from other models (like Omniclass) where used to create functional elements (i.e. subclasses of spaces according to their usage, subclasses of buildings...).</dc:description>
+        <dc:title xml:lang="en">Building Ontology - BIM4Ren Project</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -21,39 +57,132 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildings#address -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#address">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#address"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Address"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.bim4ren.eu/buildings#floors -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#floors"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#floors">
+        <owl:inverseOf rdf:resource="http://www.bim4ren.eu/buildings#hasAppartments"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#floors"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Appartment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#floors"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#address"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#InnerFloor"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#hasAppartments -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasAppartments"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasAppartments">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#address"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Appartment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#hasBuildings -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasBuildings"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasBuildings">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasBuildings"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Site"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasBuildings"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Building"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#hasFloors -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasFloors"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasFloors">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasBuildings"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Floor"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#hasPosition -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasPosition"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasPosition">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasPosition"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#GeoPosition"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#hasSpaces -->
+
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#hasSpaces">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasSpaces"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#inside -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#inside"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#inside">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#inside"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Appartment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#inside"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#GlobalFloor"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
@@ -61,6 +190,18 @@
 
     <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#managedBy">
         <owl:inverseOf rdf:resource="http://www.bim4ren.eu/buildings#manages"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#manages"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Entity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#managedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Entity"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -75,19 +216,26 @@
 
     <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#ownedBy">
         <owl:inverseOf rdf:resource="http://www.bim4ren.eu/buildings#owns"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#ownedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Entity"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
 
     <!-- http://www.bim4ren.eu/buildings#owns -->
 
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#owns"/>
-    
-
-
-    <!-- http://www.bim4ren.eu/buildings#separatedSpaces -->
-
-    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#separatedSpaces"/>
+    <owl:ObjectProperty rdf:about="http://www.bim4ren.eu/buildings#owns">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Entity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
     
 
 
@@ -107,6 +255,18 @@
     <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#altitude">
         <rdfs:subPropertyOf rdf:resource="http://www.bim4ren.eu/buildings#position"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#city -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#city"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#country"/>
     
 
 
@@ -162,6 +322,18 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildings#streetName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#streetName"/>
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#streetNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#streetNumber"/>
+    
+
+
     <!-- http://www.bim4ren.eu/buildings#surface -->
 
     <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#surface"/>
@@ -180,6 +352,12 @@
     
 
 
+    <!-- http://www.bim4ren.eu/buildings#zipCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.bim4ren.eu/buildings#zipCode"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -188,6 +366,48 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.bim4ren.eu/buildings#Address -->
+
+    <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Address">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#streetNumber"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#city"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#country"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#streetName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#zipCode"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -206,13 +426,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#floors"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Floor"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#InnerFloor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#inside"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Floor"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#GlobalFloor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -247,8 +467,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#address"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildings#Address"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#yearOfConstruction"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -309,9 +537,11 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#name"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An entity can be either a person or a company. An entity plays a particular role regarding a building, a site or any other building component.</rdfs:comment>
     </owl:Class>
     
 
@@ -322,8 +552,15 @@
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#VolumetricElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasSpaces"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#level"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -362,6 +599,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Geographical position (GPS coordinates). Used for the localization of a building or site.</rdfs:comment>
     </owl:Class>
     
 
@@ -376,6 +614,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#Appartment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A global floor is a horizontal decomposition element of a building: a building made of 5 floors, would contain 5 global floors.</rdfs:comment>
     </owl:Class>
     
 
@@ -392,6 +631,7 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#InnerFloor">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#Floor"/>
+        <rdfs:comment xml:lang="en">An inner floor is a partial horizontal layering of a building: this comprises mezzanines, but also a 2-floors appartment in a 3-floors made building.</rdfs:comment>
     </owl:Class>
     
 
@@ -505,12 +745,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasPosition"/>
-                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#GeoPosition"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#managedBy"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.bim4ren.eu/buildings#Manager"/>
@@ -521,6 +755,13 @@
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#ownedBy"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.bim4ren.eu/buildings#Owner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#hasPosition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.bim4ren.eu/buildings#GeoPosition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -554,6 +795,12 @@
 
     <owl:Class rdf:about="http://www.bim4ren.eu/buildings#Space">
         <rdfs:subClassOf rdf:resource="http://www.bim4ren.eu/buildings#VolumetricElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#floors"/>
+                <owl:someValuesFrom rdf:resource="http://www.bim4ren.eu/buildings#InnerFloor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#shared"/>
@@ -595,19 +842,22 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#meanHeight"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#surface"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.bim4ren.eu/buildings#volume"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
